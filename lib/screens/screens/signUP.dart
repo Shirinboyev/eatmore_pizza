@@ -1,6 +1,5 @@
 import 'package:eatmore_pizza/screens/Login.dart';
 import 'package:flutter/material.dart';
-
 import '../../main.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -13,10 +12,10 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   Widget field(String txt,bool bln,{IconData? icn}){
   return     Padding(
-    padding: const EdgeInsets.only(top: 20,bottom: 20),
+    padding: const EdgeInsets.only(top: 10,bottom: 10),
     child: Container(
       decoration: BoxDecoration(
-        color: Colors.amber[100],
+        color: Colors.amber[50],
         borderRadius: BorderRadius.circular(20)),
       child: TextField(
                     obscuringCharacter: '*',
