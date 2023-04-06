@@ -67,40 +67,8 @@ class _SignUpPageState extends State<SignUpPage> {
          child: Column(
             children: [
               field('Email Address',false),
-              field('Password',true),
-              field('Confirm Password',false)
-               //   TextField(
-              //   decoration: InputDecoration(
-              //     fillColor: Colors.amber,
-              //   labelText: 'Email Address',
-              //     border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
-              //   ),
-              // ),
-              //   SizedBox(height: 20,),
-              //   TextField(
-              //   obscuringCharacter: '*',
-              //   obscureText: true,
-              //   decoration: InputDecoration(
-              //     suffixIcon: IconButton(onPressed: (){},
-              //      icon: Icon(Icons.visibility_off),),
-              //     labelText: 'Password',
-              //     border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
-              //   ),
-              // ),
-              //    SizedBox(height: 20,),
-              //     Container(
-                    
-              //       child: TextField(
-              //   obscuringCharacter: '*',
-              //   obscureText: true,
-              //   decoration: InputDecoration(
-              //       suffixIcon: IconButton(onPressed: (){},
-              //        icon: Icon(Icons.visibility_off),),
-              //       labelText: 'Confirm Password',
-              //       border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
-              //   ),
-              // ),
-              //     ),
+              field('Password',true,icn: Icons.visibility_off_sharp),
+              field('Confirm Password',false,icn: Icons.visibility_off)
           ],
          ),
        ) ,
