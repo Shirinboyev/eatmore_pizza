@@ -1,6 +1,7 @@
 import 'package:eatmore_pizza/screens/Login.dart';
 import 'package:eatmore_pizza/screens/screens/menuPage.dart';
 import 'package:flutter/material.dart';
+import '../../functions.dart';
 import '../../main.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -15,47 +16,14 @@ class SignUpPage extends StatefulWidget {
   TextEditingController _controller2 = TextEditingController();
 
 class _SignUpPageState extends State<SignUpPage> {
-    Widget ele(String str,String txt){
-    return    Padding(
-      padding: const EdgeInsets.only(top: 25,right: 13,left: 13),
-      child: OutlinedButton(onPressed: (){},
-            child: ListTile(
-              leading: Padding(
-                padding: const EdgeInsets.all(12),
-                child: Image.asset(str),
-              ),
-              title: Text(txt),
-            )),
-    );
-  }
-  Widget field(TextEditingController controller,String txt,bool bln,{IconData? icn}){
-  return     Padding(
-    padding: const EdgeInsets.only(top: 10,bottom: 10),
-    child: Container(
-      decoration: BoxDecoration(
-        color: Colors.amber[50],
-        borderRadius: BorderRadius.circular(20)),
-      child: TextField(
-        controller: controller,
-                    obscuringCharacter: '*',
-                    obscureText: bln,
-                    decoration: InputDecoration(
-                      suffixIcon: IconButton(onPressed: (){},
-                       icon: Icon(icn),),
-                      labelText: txt,
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
-                    ),
-                  ),
-    ),
-  );
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0.0,
-       actions: [
-         Padding(
+       elevation: 0.0,
+       actions: const[
+          Padding(
             padding:  EdgeInsets.only(right: 150,top:15),
             child: Text('Sign in',style: TextStyle(
               color: Colors.black,
@@ -82,12 +50,12 @@ class _SignUpPageState extends State<SignUpPage> {
        child:const Icon(Icons.arrow_back,color: Colors.black,)),),
        body:Padding(
          padding: const EdgeInsets.only(right: 20,left: 20,top: 20),
-         child: Column(
+         child: ListView(
             children: [
               field(_controller,'Email Address',false),
               field(_controller1,'Password',true,icn: Icons.visibility_off_outlined),
               field(_controller2,'Confirm Password',false,icn: Icons.visibility_off_outlined),
-              SizedBox(height: 20),
+            const  SizedBox(height: 20),
                 ElevatedButton(
                    style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -106,7 +74,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 },
                 child: Text('Sign in'),
                 ),
-                  SizedBox(height: 40,),
+                  const SizedBox(height: 40,),
               Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
@@ -114,7 +82,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     height: 1.3,  
                     color: Colors.grey,
                   ),
-                  Text(' Or ',style: TextStyle(fontSize: 17),),
+                  const Text(' Or ',style: TextStyle(fontSize: 17),),
                   Container(    
                     width: 140,
                     height: 1.3,   
@@ -122,9 +90,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
-                   SizedBox(height: 30,),
-            ele('images/google.png','Sign in with Goole'),
-            ele('images/fasebook.png','Sign in with Facebook'),
+                   const SizedBox(height: 30,),
+            website('images/google.png','Sign in with Goole'),
+            website('images/fasebook.png','Sign in with Facebook'),
           ],
          ),
        ) ,

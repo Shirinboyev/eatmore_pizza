@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:eatmore_pizza/functions.dart';
 import 'package:flutter/material.dart';
 
 class MenuPage extends StatefulWidget {
@@ -67,48 +66,68 @@ class _MenuPageState extends State<MenuPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  OutlinedButton(
-                    onPressed: (() {
-                      
-                    }),
-                    child: Column(
-                      children: [
-                        Image.asset('images/burger.png',scale: 8,),
-                        Text('Burger')
-                      ],
+                  listView_foods('images/chickend.png',
+                  
+                   'Chicken',
+                    Colors.red, 
+                    20,
+                    Color.fromARGB(255, 240, 248, 163),
+                   6.9,
+                    Size(190, 160),
+                    30,
                     ),
-                  ), Column(
-                    children: [
-                      Image.asset('images/pizza.png',scale: 2,),
-                      Text('Pizza')
-                    ],
-                  )
+                    
+                    SizedBox(width: 20,),
+                         listView_foods('images/burger.png',
+                   'Burder',
+                    Colors.red, 
+                    20,
+                    Colors.white,
+                   13,
+                    Size(190, 160),
+                    30,
+                    ),SizedBox(width: 20,),
+                         listView_foods('images/pizza.png',
+                   'Pizza',
+                    Colors.red, 
+                    20,
+                    Colors.white,
+                   13,
+                    Size(190, 160),
+                    30,
+                    ),
                 ],
               )),            SizedBox(height: 30,),
 
                           Expanded(
-              flex: 4,
+              flex: 5,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  OutlinedButton(
-                    onPressed: (() {
+                  listView_foods('images/chicken1.png',
+                   '\nChicken\n₱ 18\n',
+                   Colors.white, 
+                   30,
+                   Color.fromARGB(255, 255, 64, 0),
+                   13,
+                   Size(230, 300),
+                   40,
+                  widget1: Icons.star
                       
-                    }),
-                    child: Column(
-                      children: [
-                        Image.asset('images/burger.png',scale: 7,),
-                        Text('Burger')
-                      ],
-                    ),
-                  ), Column(
-                    children: [
-                      Image.asset('images/pizza.png',scale: 2,),
-                      Text('Pizza')
-                    ],
-                  )
+                   ),
+                     listView_foods('images/chicken1.png',
+                   '\nChicken\n₱ 12\n ',
+                   Colors.grey, 
+                   30,
+                   Colors.white,
+                   13,
+                   Size(230, 300),
+                   40,
+                  widget1: Icons.star
+                      
+                   ),
                 ],
-              ))
+              )),
             
           ],
         ),

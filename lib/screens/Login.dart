@@ -3,6 +3,8 @@ import 'package:eatmore_pizza/screens/screens/forgetPage.dart';
 import 'package:eatmore_pizza/screens/screens/menuPage.dart';
 import 'package:eatmore_pizza/screens/screens/signIn.dart';
 import 'package:flutter/material.dart';
+
+import '../functions.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -14,40 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController _controller = TextEditingController();
   TextEditingController _controller1 = TextEditingController();
   @override 
-    Widget field1(TextEditingController _controller,String txt,bool bln,{IconData? icn}){
-  return     Padding(
-    padding: const EdgeInsets.only(top: 10,bottom: 10),
-    child: Container(
-      decoration: BoxDecoration(
-        color: Colors.amber[50],
-        borderRadius: BorderRadius.circular(20)),
-      child: TextField(
-                        controller: _controller,
-                    obscuringCharacter: '*',
-                    obscureText: bln,
-                    decoration: InputDecoration(
-                      suffixIcon: IconButton(onPressed: (){},
-                       icon: Icon(icn),),
-                      labelText: txt,
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
-                    ),
-                  ),
-    ),
-  );
-  }
-  Widget ele(String str,String txt){
-    return    Padding(
-      padding: const EdgeInsets.only(top: 25,right: 13,left: 13),
-      child: OutlinedButton(onPressed: (){},
-            child: ListTile(
-              leading: Padding(
-                padding: const EdgeInsets.all(12),
-                child: Image.asset(str),
-              ),
-              title: Text(txt),
-            )),
-    );
-  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -83,8 +52,8 @@ class _LoginPageState extends State<LoginPage> {
         child: ListView(
           children:[ Column(
             children: [
-            field1(_controller,'Email Address', false,),
-            field1(_controller1,'Password', true,icn: Icons.visibility_off_outlined),
+            fieldPage(_controller,'Email Address', false,),
+            fieldPage(_controller1,'Password', true,icn: Icons.visibility_off_outlined),
             
               // if(_controller == 0)
               Padding(
@@ -140,8 +109,8 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             SizedBox(height: 30,),
-            ele('images/google.png','Sign in with Goole'),
-            ele('images/fasebook.png','Sign in with Facebook'),
+            website_sign_in('images/google.png','Sign in with Goole'),
+            website_sign_in('images/fasebook.png','Sign in with Facebook'),
             ],
           ),]
         ),
