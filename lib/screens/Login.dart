@@ -1,6 +1,7 @@
 import 'package:eatmore_pizza/main.dart';
 import 'package:eatmore_pizza/screens/screens/forgetPage.dart';
-import 'package:eatmore_pizza/screens/screens/signUP.dart';
+import 'package:eatmore_pizza/screens/screens/menuPage.dart';
+import 'package:eatmore_pizza/screens/screens/signIn.dart';
 import 'package:flutter/material.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -83,17 +84,16 @@ class _LoginPageState extends State<LoginPage> {
           children:[ Column(
             children: [
             field1(_controller,'Email Address', false,),
-            field1(_controller1,'Password', true),
+            field1(_controller1,'Password', true,icn: Icons.visibility_off_outlined),
             
               // if(_controller == 0)
               Padding(
                 padding: const EdgeInsets.only(right: 170),
                 child: TextButton(onPressed: (){
-                              if(_controller1.text.length != 0){
+                              if(_controller1.text.length > 7){
                                 Navigator.push(context, MaterialPageRoute(builder: ((context) => ForgetPage())));
                               }
                 },
-                
                  child: Text('Forget Password?',style: TextStyle(
                   color: Colors.red,fontSize: 16),)),
               ),
@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 onPressed: (){
                   if(_controller1.text.length > 7){
-                  Navigator.push(context, MaterialPageRoute(builder: ((context) => ForgetPage())));
+                  Navigator.push(context, MaterialPageRoute(builder: ((context) => MenuPage())));
                   }
                 }, 
               child: Text('Log in'),
